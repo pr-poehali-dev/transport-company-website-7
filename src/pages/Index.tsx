@@ -217,27 +217,29 @@ export default function Index() {
       {/* ABOUT */}
       <section id="about" className="py-14 px-6 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="text-xs text-orange-400 font-bold tracking-widest uppercase mb-3">О компании</div>
-              <h2 className="text-4xl md:text-5xl font-black leading-tight mb-5">
-                Движемся вперёд<br />с 2012 года
-              </h2>
-              <p className="text-gray-400 leading-snug mb-4">
-                ТрансЛогист — одна из ведущих транспортных компаний России. Мы начинали с 5 грузовиков и небольшого офиса в Москве. Сегодня наш автопарк насчитывает более 150 единиц техники, а сеть охватывает все регионы страны.
+          <div className="text-xs text-orange-400 font-bold tracking-widest uppercase mb-3">О компании</div>
+          <h2 className="text-4xl md:text-5xl font-black leading-tight mb-8">
+            Быстрая, надёжная доставка<br />грузов по всей России
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            {/* Основное */}
+            <div className="lg:col-span-1">
+              <p className="text-gray-300 leading-snug mb-5">
+                Грузы от 100 кг до 20 т по всей России, включая регионы Крайнего Севера. Принимаем сборный груз и негабарит. Оформление разрешений и сопроводительных документов. Любая форма оплаты, в том числе НДС.
               </p>
-              <p className="text-gray-400 leading-snug mb-6">
-                Наш принцип прост: груз должен прийти вовремя и в сохранности. Именно поэтому 78% клиентов возвращаются к нам снова.
-              </p>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 {[
-                  "Собственный автопарк — без посредников",
-                  "GPS-трекинг каждого груза в реальном времени",
-                  "Личный менеджер на каждый заказ",
-                  "Страхование грузов включено в тариф",
+                  "100% гарантия сохранности груза + страхование",
+                  "Перевозка от двери до двери без склада и перегруза",
+                  "Персональный менеджер, круглосуточная связь",
+                  "Помощь в погрузке/выгрузке, спецтехника",
+                  "Документы в течение 3 дней после доставки",
+                  "Система лояльности для постоянных клиентов",
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0">
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Icon name="Check" size={11} className="text-white" />
                     </div>
                     <span className="text-sm text-gray-300">{item}</span>
@@ -246,14 +248,47 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              {STATS.map((s, i) => (
-                <div key={i} className="border border-gray-700 p-8 rounded-sm">
-                  <div className="text-4xl font-black text-orange-400 mb-2">{s.value}</div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wider">{s.label}</div>
-                </div>
-              ))}
+            {/* Для физических лиц */}
+            <div className="bg-gray-800 rounded-sm p-6">
+              <div className="text-orange-400 font-bold text-xs uppercase tracking-widest mb-4">Для физических лиц</div>
+              <div className="flex flex-col gap-2">
+                {[
+                  "Домашние переезды",
+                  "Переезды для военнослужащих",
+                  "Перевозка личных вещей, мебели, бытовой техники",
+                  "Перевозка легковых автомобилей",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <span className="text-orange-400 mt-1 text-xs">▸</span>
+                    <span className="text-sm text-gray-300">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
+
+            {/* Для юридических лиц */}
+            <div className="bg-gray-800 rounded-sm p-6">
+              <div className="text-orange-400 font-bold text-xs uppercase tracking-widest mb-4">Для юридических лиц</div>
+              <div className="flex flex-col gap-2">
+                {[
+                  "Любые грузы от 100 кг в любую точку России",
+                  "Контейнерные перевозки",
+                  "Скоропортящиеся грузы, рефрижератор",
+                  "Металл, металлолом, трубы, металлопрокат",
+                  "ЖД запчасти, включая колёсные пары",
+                  "Лес, брус, доска, пиломатериал",
+                  "Негабарит: строительная и с/х техника, оборудование, металлоконструкции, водный транспорт, эл. подстанции",
+                  "Труднодоступные районы: Воркута, Усинск, ХМАО, ЯНАО",
+                  "Услуга «Срочная доставка» отдельным транспортом",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <span className="text-orange-400 mt-1 text-xs">▸</span>
+                    <span className="text-sm text-gray-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -264,7 +299,7 @@ export default function Index() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <div className="text-xs text-orange-500 font-bold tracking-widest uppercase mb-3">Стоимость</div>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900">Калькулятор доставки</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900">Расчёт стоимости</h2>
               <p className="text-gray-500 mt-4">Рассчитайте приблизительную стоимость за несколько секунд</p>
             </div>
 
@@ -516,46 +551,29 @@ export default function Index() {
       {/* CONTACTS */}
       <section id="contacts" className="py-14 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div>
-              <div className="text-xs text-orange-500 font-bold tracking-widest uppercase mb-3">Связаться с нами</div>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-5">Контакты</h2>
+          <div className="text-xs text-orange-500 font-bold tracking-widest uppercase mb-3">Связаться с нами</div>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8">Контакты</h2>
 
-              <div className="flex flex-col gap-5">
-                {[
-                  { icon: "Phone", label: "Телефоны", value: "+7 912 888-73-00 / +7 912 888-00-42 / +7 912 888-43-00" },
-                  { icon: "Mail", label: "Email", value: "yulmitrans@mail.ru" },
-                  { icon: "Send", label: "Telegram", value: "t.me/yulmitrans" },
-                  { icon: "Clock", label: "Режим работы", value: "Круглосуточно, без выходных" },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-white border border-gray-200 rounded-sm flex items-center justify-center flex-shrink-0">
-                      <Icon name={item.icon} fallback="MapPin" size={18} className="text-gray-500" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">{item.label}</div>
-                      <div className="text-gray-900 font-semibold">{item.value}</div>
-                    </div>
-                  </div>
-                ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-white border border-gray-200 rounded-sm p-5">
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">Телефоны</div>
+              <div className="flex flex-col gap-1">
+                <a href="tel:+79128887300" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">+7 912 888-73-00</a>
+                <a href="tel:+79128880042" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">+7 912 888-00-42</a>
+                <a href="tel:+79128884300" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">+7 912 888-43-00</a>
               </div>
             </div>
-
-            <div>
-              <div className="bg-white border border-gray-200 rounded-sm p-8">
-                <h3 className="text-lg font-black text-gray-900 mb-2">Города присутствия</h3>
-                <p className="text-sm text-gray-500 mb-6">Доставляем во все города России и СНГ</p>
-                <div className="flex flex-wrap gap-2">
-                  {CITIES.map(c => (
-                    <span key={c} className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-sm">
-                      {c}
-                    </span>
-                  ))}
-                  <span className="bg-orange-50 text-orange-600 text-xs font-medium px-3 py-1.5 rounded-sm">
-                    + ещё 200 городов
-                  </span>
-                </div>
-              </div>
+            <div className="bg-white border border-gray-200 rounded-sm p-5">
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">Email</div>
+              <a href="mailto:yulmitrans@mail.ru" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">yulmitrans@mail.ru</a>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-sm p-5">
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">Telegram</div>
+              <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">t.me/yulmitrans</a>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-sm p-5">
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">Режим работы</div>
+              <div className="text-gray-900 font-semibold">Круглосуточно,<br />без выходных</div>
             </div>
           </div>
         </div>
