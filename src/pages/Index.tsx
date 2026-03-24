@@ -152,16 +152,16 @@ export default function Index() {
 
         <div className="relative max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-white/70 text-sm font-medium mb-8 tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 text-white/70 text-sm font-medium mb-5 tracking-widest uppercase">
               <div className="w-8 h-px bg-orange-400" />
               Надёжная доставка грузов
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-none tracking-tight mb-6 animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-none tracking-tight mb-4 animate-fade-in">
               Везём<br />
               <span className="text-orange-400">вовремя.</span><br />
               Всегда.
             </h1>
-            <p className="text-lg text-white/70 mb-10 leading-relaxed animate-fade-in animate-delay-200 max-w-lg">
+            <p className="text-lg text-white/70 mb-6 leading-snug animate-fade-in animate-delay-200 max-w-lg">
               Транспортная компания с 12-летним опытом. Доставляем грузы по России и СНГ — от 1 кг до 20 тонн.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-300">
@@ -188,9 +188,9 @@ export default function Index() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-24 px-6 bg-white">
+      <section id="services" className="py-14 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-16 border-b border-gray-100 pb-8">
+          <div className="flex items-end justify-between mb-10 border-b border-gray-100 pb-5">
             <div>
               <div className="text-xs text-orange-500 font-bold tracking-widest uppercase mb-3">Что мы делаем</div>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">Услуги</h2>
@@ -202,12 +202,12 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100">
             {SERVICES.map((s, i) => (
-              <div key={i} className="bg-white p-8 hover:bg-gray-50 transition-colors group">
-                <div className="w-12 h-12 bg-gray-100 rounded-sm flex items-center justify-center mb-6 group-hover:bg-orange-50 transition-colors">
+              <div key={i} className="bg-white p-6 hover:bg-gray-50 transition-colors group">
+                <div className="w-12 h-12 bg-gray-100 rounded-sm flex items-center justify-center mb-4 group-hover:bg-orange-50 transition-colors">
                   <Icon name={s.icon} fallback="Package" size={22} className="text-gray-600 group-hover:text-orange-500 transition-colors" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">{s.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-gray-500 leading-snug">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -215,18 +215,18 @@ export default function Index() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-24 px-6 bg-gray-900 text-white">
+      <section id="about" className="py-14 px-6 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="text-xs text-orange-400 font-bold tracking-widest uppercase mb-3">О компании</div>
-              <h2 className="text-4xl md:text-5xl font-black leading-tight mb-8">
+              <h2 className="text-4xl md:text-5xl font-black leading-tight mb-5">
                 Движемся вперёд<br />с 2012 года
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-400 leading-snug mb-4">
                 ТрансЛогист — одна из ведущих транспортных компаний России. Мы начинали с 5 грузовиков и небольшого офиса в Москве. Сегодня наш автопарк насчитывает более 150 единиц техники, а сеть охватывает все регионы страны.
               </p>
-              <p className="text-gray-400 leading-relaxed mb-10">
+              <p className="text-gray-400 leading-snug mb-6">
                 Наш принцип прост: груз должен прийти вовремя и в сохранности. Именно поэтому 78% клиентов возвращаются к нам снова.
               </p>
               <div className="flex flex-col gap-4">
@@ -259,10 +259,10 @@ export default function Index() {
       </section>
 
       {/* CALCULATOR */}
-      <section id="calculator" className="py-24 px-6 bg-white">
+      <section id="calculator" className="py-14 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <div className="text-xs text-orange-500 font-bold tracking-widest uppercase mb-3">Стоимость</div>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900">Калькулятор доставки</h2>
               <p className="text-gray-500 mt-4">Рассчитайте приблизительную стоимость за несколько секунд</p>
@@ -313,7 +313,7 @@ export default function Index() {
 
               {calcResult && (
                 <div className="mt-6 p-6 bg-white border border-orange-200 rounded-sm">
-                  <div className="text-center mb-6">
+                  <div className="text-center mb-4">
                     <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Ориентировочная стоимость</div>
                     <div className="text-4xl font-black text-gray-900">{calcResult.toLocaleString("ru")} ₽</div>
                     <div className="text-sm text-gray-400 mt-2">Точная цена — после консультации с менеджером</div>
@@ -364,15 +364,15 @@ export default function Index() {
       </section>
 
       {/* ORDER FORM */}
-      <section id="order" className="py-24 px-6 bg-orange-500">
+      <section id="order" className="py-14 px-6 bg-orange-500">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <div>
               <div className="text-xs text-orange-100 font-bold tracking-widest uppercase mb-3">Работаем быстро</div>
-              <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
+              <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
                 Оставьте заявку —<br />перезвоним за 15 минут
               </h2>
-              <p className="text-orange-100 leading-relaxed mb-8">
+              <p className="text-orange-100 leading-snug mb-5">
                 Менеджер уточнит детали, рассчитает точную стоимость и предложит оптимальный маршрут. Без скрытых комиссий.
               </p>
               <div className="flex flex-col gap-4">
@@ -487,22 +487,22 @@ export default function Index() {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="py-24 px-6 bg-white">
+      <section id="reviews" className="py-14 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <div className="text-xs text-orange-500 font-bold tracking-widest uppercase mb-3">Доверяют нам</div>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900">Отзывы клиентов</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {REVIEWS.map((r, i) => (
-              <div key={i} className="border border-gray-100 p-8 rounded-sm hover:border-gray-200 transition-colors">
-                <div className="flex gap-1 mb-6">
+              <div key={i} className="border border-gray-100 p-6 rounded-sm hover:border-gray-200 transition-colors">
+                <div className="flex gap-1 mb-4">
                   {Array.from({ length: r.rating }).map((_, j) => (
                     <Icon key={j} name="Star" size={14} className="text-orange-400 fill-orange-400" />
                   ))}
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-6">«{r.text}»</p>
+                <p className="text-gray-700 text-sm leading-snug mb-4">«{r.text}»</p>
                 <div className="border-t border-gray-100 pt-4">
                   <div className="font-bold text-gray-900 text-sm">{r.name}</div>
                   <div className="text-xs text-gray-400 mt-0.5">{r.company}</div>
@@ -514,14 +514,14 @@ export default function Index() {
       </section>
 
       {/* CONTACTS */}
-      <section id="contacts" className="py-24 px-6 bg-gray-50">
+      <section id="contacts" className="py-14 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
               <div className="text-xs text-orange-500 font-bold tracking-widest uppercase mb-3">Связаться с нами</div>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8">Контакты</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-5">Контакты</h2>
 
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-5">
                 {[
                   { icon: "Phone", label: "Телефоны", value: "+7 912 888-73-00 / +7 912 888-00-42 / +7 912 888-43-00" },
                   { icon: "Mail", label: "Email", value: "yulmitrans@mail.ru" },
