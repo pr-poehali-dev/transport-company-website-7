@@ -21,8 +21,6 @@ const SERVICES = [
 const STATS = [
   { value: "12 лет", label: "на рынке" },
   { value: "50 000+", label: "доставок в год" },
-  { value: "150+", label: "единиц техники" },
-  { value: "99.4%", label: "без повреждений" },
 ];
 
 const REVIEWS = [
@@ -39,11 +37,30 @@ export default function Index() {
   const [calcFrom, setCalcFrom] = useState("");
   const [calcTo, setCalcTo] = useState("");
   const [calcWeight, setCalcWeight] = useState("");
+  const [calcName, setCalcName] = useState("");
+  const [calcPhone, setCalcPhone] = useState("");
   const [calcResult, setCalcResult] = useState<number | null>(null);
+  const [calcSent, setCalcSent] = useState(false);
+  const [calcSending, setCalcSending] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      await fetch("https://formsubmit.co/ajax/yulmitrans@mail.ru", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          _subject: "Новая заявка с сайта ЮЛМИ-ТРАНС",
+          Имя: form.name,
+          Телефон: form.phone,
+          Откуда: form.from,
+          Куда: form.to,
+          Вес: form.weight,
+          Комментарий: form.comment,
+        }),
+      });
+    } catch (err) { console.error(err); }
     setFormSent(true);
   };
 
@@ -53,6 +70,28 @@ export default function Index() {
     const distance = Math.floor(Math.random() * 1500 + 500);
     const result = Math.round(base + distance * 0.8);
     setCalcResult(result);
+  };
+
+  const handleCalcOrder = async () => {
+    if (!calcName || !calcPhone) return;
+    setCalcSending(true);
+    try {
+      await fetch("https://formsubmit.co/ajax/yulmitrans@mail.ru", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          _subject: "Заявка из калькулятора — ЮЛМИ-ТРАНС",
+          ФИО: calcName,
+          Телефон: calcPhone,
+          Откуда: calcFrom,
+          Куда: calcTo,
+          "Вес (кг)": calcWeight,
+          "Стоимость (ориент.)": calcResult ? `${calcResult.toLocaleString("ru")} ₽` : "—",
+        }),
+      });
+    } catch (err) { console.error(err); }
+    setCalcSending(false);
+    setCalcSent(true);
   };
 
   return (
@@ -273,13 +312,50 @@ export default function Index() {
               </button>
 
               {calcResult && (
-                <div className="mt-6 p-6 bg-white border border-orange-200 rounded-sm text-center">
-                  <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Ориентировочная стоимость</div>
-                  <div className="text-4xl font-black text-gray-900">{calcResult.toLocaleString("ru")} ₽</div>
-                  <div className="text-sm text-gray-400 mt-2">Точная цена — после консультации с менеджером</div>
-                  <a href="#order" className="inline-block mt-4 bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-3 rounded-sm transition-colors text-sm">
-                    Оформить заявку
-                  </a>
+                <div className="mt-6 p-6 bg-white border border-orange-200 rounded-sm">
+                  <div className="text-center mb-6">
+                    <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Ориентировочная стоимость</div>
+                    <div className="text-4xl font-black text-gray-900">{calcResult.toLocaleString("ru")} ₽</div>
+                    <div className="text-sm text-gray-400 mt-2">Точная цена — после консультации с менеджером</div>
+                  </div>
+                  {calcSent ? (
+                    <div className="text-center py-4">
+                      <div className="text-orange-500 font-bold text-lg mb-1">Заявка отправлена!</div>
+                      <div className="text-gray-500 text-sm">Мы свяжемся с вами в ближайшее время</div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-3">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">ФИО *</label>
+                          <input
+                            type="text"
+                            placeholder="Иванов Иван Иванович"
+                            value={calcName}
+                            onChange={e => setCalcName(e.target.value)}
+                            className="w-full border border-gray-200 rounded-sm px-4 py-3 text-sm bg-white text-gray-900 focus:outline-none focus:border-gray-900"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Телефон *</label>
+                          <input
+                            type="tel"
+                            placeholder="+7 (999) 000-00-00"
+                            value={calcPhone}
+                            onChange={e => setCalcPhone(e.target.value)}
+                            className="w-full border border-gray-200 rounded-sm px-4 py-3 text-sm bg-white text-gray-900 focus:outline-none focus:border-gray-900"
+                          />
+                        </div>
+                      </div>
+                      <button
+                        onClick={handleCalcOrder}
+                        disabled={calcSending || !calcName || !calcPhone}
+                        className="w-full bg-orange-500 hover:bg-orange-400 disabled:opacity-50 text-white font-bold py-3 rounded-sm transition-colors text-sm"
+                      >
+                        {calcSending ? "Отправляем..." : "Отправить заявку"}
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -301,8 +377,11 @@ export default function Index() {
               </p>
               <div className="flex flex-col gap-4">
                 {[
-                  { icon: "Phone", text: "8 800 123-45-67 (бесплатно)" },
-                  { icon: "Mail", text: "info@translogist.ru" },
+                  { icon: "Phone", text: "+7 912 888-73-00" },
+                  { icon: "Phone", text: "+7 912 888-00-42" },
+                  { icon: "Phone", text: "+7 912 888-43-00" },
+                  { icon: "Mail", text: "yulmitrans@mail.ru" },
+                  { icon: "Send", text: "Telegram: t.me/yulmitrans" },
                   { icon: "Clock", text: "Работаем круглосуточно, 7 дней в неделю" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -444,9 +523,9 @@ export default function Index() {
 
               <div className="flex flex-col gap-8">
                 {[
-                  { icon: "MapPin", label: "Адрес", value: "Москва, Складочная ул., 1, стр. 9" },
-                  { icon: "Phone", label: "Телефон", value: "8 800 123-45-67" },
-                  { icon: "Mail", label: "Email", value: "info@translogist.ru" },
+                  { icon: "Phone", label: "Телефоны", value: "+7 912 888-73-00 / +7 912 888-00-42 / +7 912 888-43-00" },
+                  { icon: "Mail", label: "Email", value: "yulmitrans@mail.ru" },
+                  { icon: "Send", label: "Telegram", value: "t.me/yulmitrans" },
                   { icon: "Clock", label: "Режим работы", value: "Круглосуточно, без выходных" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
@@ -489,7 +568,7 @@ export default function Index() {
             <div className="w-7 h-7 bg-white rounded-sm flex items-center justify-center">
               <Icon name="Truck" size={14} className="text-gray-900" />
             </div>
-            <span className="font-bold text-lg">ТрансЛогист</span>
+            <span className="font-bold text-lg">ЮЛМИ-ТРАНС</span>
           </div>
           <div className="flex flex-wrap gap-6 justify-center">
             {NAV_LINKS.map(l => (
@@ -498,7 +577,7 @@ export default function Index() {
               </a>
             ))}
           </div>
-          <p className="text-gray-500 text-sm">© 2024 ТрансЛогист</p>
+          <p className="text-gray-500 text-sm">© 2025 ЮЛМИ-ТРАНС</p>
         </div>
       </footer>
     </div>
