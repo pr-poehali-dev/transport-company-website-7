@@ -2,6 +2,14 @@ import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/b419a453-393d-4d16-854e-328b5dc40ae6/files/dfeb7756-3e45-49b8-acdf-e204a0b162af.jpg";
+const TRUCK_IMAGE = "https://cdn.poehali.dev/projects/b419a453-393d-4d16-854e-328b5dc40ae6/files/1d7f3725-b965-4a58-ae79-b5e37fef11d4.jpg";
+const WAREHOUSE_IMAGE = "https://cdn.poehali.dev/projects/b419a453-393d-4d16-854e-328b5dc40ae6/files/d2c18552-95bb-417b-a36d-2a6cbdd79e77.jpg";
+
+const TelegramIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+  </svg>
+);
 
 const NAV_LINKS = [
   { label: "Услуги", href: "#services" },
@@ -97,27 +105,54 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white font-sans">
 
+      {/* TOP BAR */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white text-xs py-2 px-6 hidden md:block">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-5">
+            <a href="tel:+79128887300" className="hover:text-orange-400 transition-colors flex items-center gap-1.5">
+              <Icon name="Phone" size={12} />+7 912 888-73-00
+            </a>
+            <span className="text-white/20">|</span>
+            <a href="tel:+79128880042" className="hover:text-orange-400 transition-colors">+7 912 888-00-42</a>
+            <span className="text-white/20">|</span>
+            <a href="tel:+79128884300" className="hover:text-orange-400 transition-colors">+7 912 888-43-00</a>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="mailto:yulmitrans@mail.ru" className="hover:text-orange-400 transition-colors flex items-center gap-1.5">
+              <Icon name="Mail" size={12} />yulmitrans@mail.ru
+            </a>
+            <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer"
+               className="flex items-center gap-1.5 bg-[#2AABEE] hover:bg-[#1d96d4] text-white px-3 py-0.5 rounded-full transition-colors font-medium">
+              <TelegramIcon />Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* NAVBAR */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <header className="fixed top-0 md:top-8 left-0 right-0 z-40 bg-white/97 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-gray-900 rounded-sm flex items-center justify-center">
-              <Icon name="Truck" size={14} className="text-white" />
+          <a href="#" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center shadow-md">
+              <Icon name="Truck" size={16} className="text-white" />
             </div>
-            <span className="font-bold text-gray-900 text-lg tracking-tight">ЮЛМИ-ТРАНС</span>
+            <span className="font-black text-gray-900 text-xl tracking-tight">ЮЛМИ-ТРАНС</span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             {NAV_LINKS.map(l => (
-              <a key={l.href} href={l.href} className="text-sm text-gray-500 hover:text-gray-900 transition-colors font-medium">
+              <a key={l.href} href={l.href} className="text-sm text-gray-500 hover:text-orange-500 transition-colors font-medium">
                 {l.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+78001234567" className="text-sm font-semibold text-gray-900">8 800 123-45-67</a>
-            <a href="#order" className="bg-gray-900 text-white text-sm font-semibold px-5 py-2.5 rounded-sm hover:bg-gray-700 transition-colors">
+          <div className="hidden md:flex items-center gap-3">
+            <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer"
+               className="flex items-center gap-2 text-[#2AABEE] border border-[#2AABEE]/30 hover:bg-[#2AABEE]/10 px-3 py-2 rounded-lg transition-colors text-sm font-semibold">
+              <TelegramIcon />Написать
+            </a>
+            <a href="#order" className="bg-orange-500 text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-orange-400 transition-colors shadow-sm">
               Оставить заявку
             </a>
           </div>
@@ -128,21 +163,32 @@ export default function Index() {
         </div>
 
         {menuOpen && (
-          <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 flex flex-col gap-4">
+          <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 flex flex-col gap-3">
             {NAV_LINKS.map(l => (
-              <a key={l.href} href={l.href} className="text-sm text-gray-700 font-medium" onClick={() => setMenuOpen(false)}>
+              <a key={l.href} href={l.href} className="text-sm text-gray-700 font-medium py-1" onClick={() => setMenuOpen(false)}>
                 {l.label}
               </a>
             ))}
-            <a href="#order" className="bg-gray-900 text-white text-sm font-semibold px-5 py-3 rounded-sm text-center" onClick={() => setMenuOpen(false)}>
-              Оставить заявку
-            </a>
+            <div className="flex gap-2 pt-2">
+              <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer"
+                 className="flex-1 flex items-center justify-center gap-2 bg-[#2AABEE] text-white text-sm font-bold px-4 py-3 rounded-lg" onClick={() => setMenuOpen(false)}>
+                <TelegramIcon />Telegram
+              </a>
+              <a href="#order" className="flex-1 bg-orange-500 text-white text-sm font-bold px-4 py-3 rounded-lg text-center" onClick={() => setMenuOpen(false)}>
+                Заявка
+              </a>
+            </div>
+            <div className="flex flex-col gap-1 pt-1 border-t border-gray-100">
+              <a href="tel:+79128887300" className="text-sm text-gray-600 py-1">+7 912 888-73-00</a>
+              <a href="tel:+79128880042" className="text-sm text-gray-600 py-1">+7 912 888-00-42</a>
+              <a href="tel:+79128884300" className="text-sm text-gray-600 py-1">+7 912 888-43-00</a>
+            </div>
           </div>
         )}
       </header>
 
       {/* HERO */}
-      <section className="relative pt-16 min-h-screen flex items-center overflow-hidden">
+      <section className="relative pt-24 md:pt-32 min-h-screen flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_IMAGE})` }}
@@ -230,6 +276,19 @@ export default function Index() {
           <h2 className="text-4xl md:text-5xl font-black leading-tight mb-8">
             Быстрая, надёжная доставка<br />грузов по всей России
           </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div className="lg:col-span-3 rounded-xl overflow-hidden h-52 relative">
+              <img src={TRUCK_IMAGE} alt="Грузовик ЮЛМИ-ТРАНС" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/30 to-transparent" />
+              <div className="absolute inset-0 flex items-center px-8">
+                <div className="text-white">
+                  <div className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-1">Собственный автопарк</div>
+                  <div className="text-2xl font-black">Доставляем по всей России</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
@@ -563,48 +622,93 @@ export default function Index() {
           <div className="text-xs text-orange-500 font-bold tracking-widest uppercase mb-3">Связаться с нами</div>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8">Контакты</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white border border-gray-200 rounded-sm p-5">
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">Телефоны</div>
-              <div className="flex flex-col gap-1">
-                <a href="tel:+79128887300" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">+7 912 888-73-00</a>
-                <a href="tel:+79128880042" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">+7 912 888-00-42</a>
-                <a href="tel:+79128884300" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">+7 912 888-43-00</a>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-orange-200 hover:shadow-md transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <Icon name="Phone" size={16} className="text-orange-500" />
+                  </div>
+                  <span className="text-xs text-gray-400 uppercase tracking-wider font-bold">Телефоны</span>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <a href="tel:+79128887300" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors text-sm">+7 912 888-73-00</a>
+                  <a href="tel:+79128880042" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors text-sm">+7 912 888-00-42</a>
+                  <a href="tel:+79128884300" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors text-sm">+7 912 888-43-00</a>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-orange-200 hover:shadow-md transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <Icon name="Mail" size={16} className="text-orange-500" />
+                  </div>
+                  <span className="text-xs text-gray-400 uppercase tracking-wider font-bold">Email</span>
+                </div>
+                <a href="mailto:yulmitrans@mail.ru" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors text-sm break-all">yulmitrans@mail.ru</a>
+              </div>
+
+              <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer"
+                 className="bg-[#2AABEE] rounded-xl p-5 hover:bg-[#1d96d4] transition-all group col-span-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-white">
+                    <TelegramIcon />
+                  </div>
+                  <span className="text-xs text-white/80 uppercase tracking-wider font-bold">Telegram</span>
+                </div>
+                <div className="text-white font-bold text-sm">t.me/yulmitrans</div>
+                <div className="text-white/70 text-xs mt-1">Написать в мессенджер →</div>
+              </a>
+
+              <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-orange-200 hover:shadow-md transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <Icon name="Clock" size={16} className="text-orange-500" />
+                  </div>
+                  <span className="text-xs text-gray-400 uppercase tracking-wider font-bold">Режим работы</span>
+                </div>
+                <div className="text-gray-900 font-semibold text-sm">Круглосуточно,<br />без выходных</div>
               </div>
             </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-5">
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">Email</div>
-              <a href="mailto:yulmitrans@mail.ru" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">yulmitrans@mail.ru</a>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-5">
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">Telegram</div>
-              <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors">t.me/yulmitrans</a>
-            </div>
-            <div className="bg-white border border-gray-200 rounded-sm p-5">
-              <div className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">Режим работы</div>
-              <div className="text-gray-900 font-semibold">Круглосуточно,<br />без выходных</div>
+
+            <div className="rounded-xl overflow-hidden h-64 lg:h-auto relative min-h-48">
+              <img src={WAREHOUSE_IMAGE} alt="Логистический центр" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <div className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-1">Логистика</div>
+                <div className="text-white font-black text-lg leading-tight">Работаем по всей России и Крайнему Северу</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-white rounded-sm flex items-center justify-center">
-              <Icon name="Truck" size={14} className="text-gray-900" />
+      <footer className="bg-gray-900 text-white py-10 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-6 pb-6 border-b border-gray-800">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                <Icon name="Truck" size={16} className="text-white" />
+              </div>
+              <span className="font-black text-xl">ЮЛМИ-ТРАНС</span>
             </div>
-            <span className="font-bold text-lg">ЮЛМИ-ТРАНС</span>
-          </div>
-          <div className="flex flex-wrap gap-6 justify-center">
-            {NAV_LINKS.map(l => (
-              <a key={l.href} href={l.href} className="text-sm text-gray-400 hover:text-white transition-colors">
-                {l.label}
+            <div className="flex flex-wrap gap-5 justify-center">
+              {NAV_LINKS.map(l => (
+                <a key={l.href} href={l.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  {l.label}
+                </a>
+              ))}
+            </div>
+            <div className="flex items-center gap-3">
+              <a href="tel:+79128887300" className="text-sm text-gray-400 hover:text-white transition-colors">+7 912 888-73-00</a>
+              <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer"
+                 className="flex items-center gap-1.5 bg-[#2AABEE] hover:bg-[#1d96d4] text-white px-3 py-1.5 rounded-full text-sm font-semibold transition-colors">
+                <TelegramIcon />Telegram
               </a>
-            ))}
+            </div>
           </div>
-          <p className="text-gray-500 text-sm">© 2025 ЮЛМИ-ТРАНС</p>
+          <div className="text-center text-gray-500 text-sm">© 2025 ЮЛМИ-ТРАНС — Грузоперевозки по России и Крайнему Северу</div>
         </div>
       </footer>
     </div>
