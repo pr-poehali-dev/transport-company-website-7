@@ -152,6 +152,15 @@ export default function Index() {
 
         <div className="relative max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-2xl">
+            <div className="flex flex-wrap items-center gap-4 mb-5">
+              <a href="tel:+79128887300" className="text-white font-bold text-sm hover:text-orange-400 transition-colors">+7 912 888-73-00</a>
+              <span className="text-white/30">|</span>
+              <a href="tel:+79128880042" className="text-white font-bold text-sm hover:text-orange-400 transition-colors">+7 912 888-00-42</a>
+              <span className="text-white/30">|</span>
+              <a href="tel:+79128884300" className="text-white font-bold text-sm hover:text-orange-400 transition-colors">+7 912 888-43-00</a>
+              <span className="text-white/30">|</span>
+              <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer" className="text-orange-400 font-bold text-sm hover:text-orange-300 transition-colors">Telegram</a>
+            </div>
             <div className="inline-flex items-center gap-2 text-white/70 text-sm font-medium mb-5 tracking-widest uppercase">
               <div className="w-8 h-px bg-orange-400" />
               Надёжная доставка грузов
