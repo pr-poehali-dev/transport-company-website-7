@@ -14,8 +14,6 @@ const NAV_LINKS = [
 const SERVICES = [
   { icon: "Truck", title: "Автодоставка", desc: "Доставка грузов по России и СНГ. Собственный автопарк из 150+ единиц техники." },
   { icon: "Package", title: "Сборные грузы", desc: "Оптимизируем маршруты и объединяем грузы — экономия до 40% от стоимости." },
-  { icon: "Warehouse", title: "Ответственное хранение", desc: "Современные склады площадью 12 000 м² с системой контроля температуры." },
-  { icon: "Globe", title: "Международные перевозки", desc: "Доставка в 45 стран. Таможенное оформление «под ключ»." },
   { icon: "Zap", title: "Экспресс-доставка", desc: "Срочная доставка от двери до двери за 24 часа по крупным городам." },
   { icon: "ShieldCheck", title: "Страхование грузов", desc: "Полное страховое покрытие грузов на всём маршруте следования." },
 ];
@@ -67,7 +65,7 @@ export default function Index() {
             <div className="w-7 h-7 bg-gray-900 rounded-sm flex items-center justify-center">
               <Icon name="Truck" size={14} className="text-white" />
             </div>
-            <span className="font-bold text-gray-900 text-lg tracking-tight">ТрансЛогист</span>
+            <span className="font-bold text-gray-900 text-lg tracking-tight">ЮЛМИ-ТРАНС</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
