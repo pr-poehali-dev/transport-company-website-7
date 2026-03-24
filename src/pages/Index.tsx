@@ -117,6 +117,15 @@ export default function Index() {
             <span className="text-white/20">|</span>
             <a href="tel:+79128884300" className="hover:text-orange-400 transition-colors">+7 912 888-43-00</a>
           </div>
+
+          <div className="flex items-center gap-5">
+            {NAV_LINKS.map(l => (
+              <a key={l.href} href={l.href} className="text-white/60 hover:text-white transition-colors">
+                {l.label}
+              </a>
+            ))}
+          </div>
+
           <div className="flex items-center gap-4">
             <a href="mailto:yulmitrans@mail.ru" className="hover:text-orange-400 transition-colors flex items-center gap-1.5">
               <Icon name="Mail" size={12} />yulmitrans@mail.ru
@@ -136,7 +145,7 @@ export default function Index() {
             <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center shadow-md">
               <Icon name="Truck" size={16} className="text-white" />
             </div>
-            <span className="font-black text-gray-900 text-xl tracking-tight">ЮЛМИ-ТРАНС</span>
+            <span className="font-black text-gray-900 text-xl tracking-tight">ЮЛМИ-<span className="text-orange-500">ТРАНС</span></span>
           </a>
 
           <nav className="hidden md:flex items-center gap-7">
@@ -691,7 +700,7 @@ export default function Index() {
               <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
                 <Icon name="Truck" size={16} className="text-white" />
               </div>
-              <span className="font-black text-xl">ЮЛМИ-ТРАНС</span>
+              <span className="font-black text-xl">ЮЛМИ-<span className="text-orange-500">ТРАНС</span></span>
             </div>
             <div className="flex flex-wrap gap-5 justify-center">
               {NAV_LINKS.map(l => (
