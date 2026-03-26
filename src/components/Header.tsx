@@ -53,7 +53,7 @@ export default function Header() {
             <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center shadow-md">
               <Icon name="Truck" size={16} className="text-white" />
             </div>
-            <span className="font-black text-gray-900 text-2xl tracking-tight drop-shadow-sm">ЮЛМИ-<span className="text-orange-500 drop-shadow-[0_1px_6px_rgba(249,115,22,0.5)]">ТРАНС</span></span>
+            <span className="font-black text-3xl tracking-tight"><span className="text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]">ЮЛМИ-</span><span className="text-orange-500 drop-shadow-[0_1px_6px_rgba(249,115,22,0.5)]">ТРАНС</span></span>
           </a>
 
           <nav className="hidden md:flex items-center gap-7">

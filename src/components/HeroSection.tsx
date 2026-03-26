@@ -112,7 +112,7 @@ export default function HeroSection() {
 
             {/* Основное */}
             <div className="lg:col-span-1">
-              <p className="text-gray-300 leading-snug mb-5">
+              <p className="text-gray-300 leading-relaxed mb-5 text-base">
                 Грузы от 100 кг до 20 т по всей России, включая регионы Крайнего Севера. Принимаем сборный груз и негабарит. Оформление разрешений и сопроводительных документов. Любая форма оплаты, в том числе НДС.
               </p>
               <div className="flex flex-col gap-3">
@@ -128,7 +128,7 @@ export default function HeroSection() {
                     <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Icon name="Check" size={11} className="text-white" />
                     </div>
-                    <span className="text-sm text-gray-300">{item}</span>
+                    <span className="text-base text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
@@ -136,8 +136,8 @@ export default function HeroSection() {
 
             {/* Для физических лиц */}
             <div className="bg-gray-800 rounded-sm p-6">
-              <div className="text-orange-400 font-bold text-xs uppercase tracking-widest mb-4">Для физических лиц</div>
-              <div className="flex flex-col gap-2">
+              <div className="text-orange-400 font-bold text-sm uppercase tracking-widest mb-4">Для физических лиц</div>
+              <div className="flex flex-col gap-3">
                 {[
                   "Домашние переезды",
                   "Переезды для военнослужащих",
@@ -145,8 +145,8 @@ export default function HeroSection() {
                   "Перевозка легковых автомобилей",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <span className="text-orange-400 mt-1 text-xs">▸</span>
-                    <span className="text-sm text-gray-300">{item}</span>
+                    <span className="text-orange-400 mt-1 text-sm">▸</span>
+                    <span className="text-base text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
@@ -154,8 +154,8 @@ export default function HeroSection() {
 
             {/* Для юридических лиц */}
             <div className="bg-gray-800 rounded-sm p-6">
-              <div className="text-orange-400 font-bold text-xs uppercase tracking-widest mb-4">Для юридических лиц</div>
-              <div className="flex flex-col gap-2">
+              <div className="text-orange-400 font-bold text-sm uppercase tracking-widest mb-4">Для юридических лиц</div>
+              <div className="flex flex-col gap-3">
                 {[
                   "Любые грузы от 100 кг в любую точку России",
                   "Контейнерные перевозки",
@@ -168,8 +168,8 @@ export default function HeroSection() {
                   "Услуга «Срочная доставка» отдельным транспортом",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <span className="text-orange-400 mt-1 text-xs">▸</span>
-                    <span className="text-sm text-gray-300">{item}</span>
+                    <span className="text-orange-400 mt-1 text-sm">▸</span>
+                    <span className="text-base text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
