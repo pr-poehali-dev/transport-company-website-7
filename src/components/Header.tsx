@@ -14,32 +14,32 @@ export default function Header() {
   return (
     <>
       {/* TOP BAR */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white py-4 px-6 hidden md:block">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white py-2 px-6 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <a href="tel:+79128887300" className="hover:text-orange-400 transition-colors flex items-center gap-2 font-bold text-xl">
-              <Icon name="Phone" size={18} />+7 912 888-73-00
+          <div className="flex items-center gap-5">
+            <a href="tel:+79128887300" className="hover:text-orange-400 transition-colors flex items-center gap-1.5 font-semibold text-sm">
+              <Icon name="Phone" size={13} />+7 912 888-73-00
             </a>
             <span className="text-white/20">|</span>
-            <a href="tel:+79128880042" className="hover:text-orange-400 transition-colors font-bold text-xl">+7 912 888-00-42</a>
+            <a href="tel:+79128880042" className="hover:text-orange-400 transition-colors font-semibold text-sm">+7 912 888-00-42</a>
             <span className="text-white/20">|</span>
-            <a href="tel:+79128884300" className="hover:text-orange-400 transition-colors font-bold text-xl">+7 912 888-43-00</a>
+            <a href="tel:+79128884300" className="hover:text-orange-400 transition-colors font-semibold text-sm">+7 912 888-43-00</a>
           </div>
 
           <div className="flex items-center gap-5">
             {NAV_LINKS.map(l => (
-              <a key={l.href} href={l.href} className="text-white/60 hover:text-white transition-colors text-sm">
+              <a key={l.href} href={l.href} className="text-white/60 hover:text-white transition-colors text-xs">
                 {l.label}
               </a>
             ))}
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="mailto:yulmitrans@mail.ru" className="hover:text-orange-400 transition-colors flex items-center gap-2 font-bold text-xl">
-              <Icon name="Mail" size={18} />yulmitrans@mail.ru
+            <a href="mailto:yulmitrans@mail.ru" className="hover:text-orange-400 transition-colors flex items-center gap-1.5 font-semibold text-sm">
+              <Icon name="Mail" size={13} />yulmitrans@mail.ru
             </a>
             <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer"
-               className="flex items-center gap-1.5 bg-[#2AABEE] hover:bg-[#1d96d4] text-white px-4 py-1.5 rounded-full transition-colors font-semibold text-base">
+               className="flex items-center gap-1.5 bg-[#2AABEE] hover:bg-[#1d96d4] text-white px-3 py-0.5 rounded-full transition-colors font-semibold text-xs">
               <TelegramIcon />Telegram
             </a>
           </div>
@@ -47,7 +47,7 @@ export default function Header() {
       </div>
 
       {/* NAVBAR */}
-      <header className="fixed top-0 md:top-[56px] left-0 right-0 z-40 bg-white/97 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+      <header className="fixed top-0 md:top-[36px] left-0 right-0 z-40 bg-white/97 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2.5">
             <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center shadow-md">
