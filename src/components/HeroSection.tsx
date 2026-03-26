@@ -34,7 +34,7 @@ export default function HeroSection() {
               Всегда.
             </h1>
             <p className="text-lg text-white/70 mb-6 leading-snug animate-fade-in animate-delay-200 max-w-lg">
-              Транспортная компания с 12-летним опытом. Доставляем грузы по России и СНГ — от 100 кг до 20 тонн.
+              Транспортная компания с 12-летним опытом. Доставляем грузы по России — от 100 кг до 20 тонн.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-300">
               <a href="#order" className="bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-4 rounded-sm transition-colors text-center">
