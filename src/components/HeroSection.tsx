@@ -47,17 +47,18 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-sm border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {STATS.map(s => (
-              <div key={s.label} className="text-center">
-                <div className="text-2xl font-black text-white">{s.value}</div>
-                <div className="text-xs text-white/60 mt-0.5 uppercase tracking-wider">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
+
+      <div className="bg-gray-900 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+          {STATS.map(s => (
+            <div key={s.label} className="text-center">
+              <div className="text-3xl font-black text-white">{s.value}</div>
+              <div className="text-xs text-white/60 mt-1 uppercase tracking-wider">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* SERVICES */}
       <section id="services" className="py-14 px-6 bg-white">
