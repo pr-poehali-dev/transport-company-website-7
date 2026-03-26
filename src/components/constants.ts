@@ -20,6 +20,8 @@ export const SERVICES = [
 export const STATS = [
   { value: "12 лет", label: "на рынке" },
   { value: "50 000+", label: "доставок в год" },
+  { value: "150+", label: "единиц техники" },
+  { value: "100%", label: "сохранность грузов" },
 ];
 
 export const REVIEWS = [
