@@ -40,50 +40,50 @@ export default function FooterSection() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-orange-200 hover:shadow-md transition-all">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                    <Icon name="Phone" size={16} className="text-orange-500" />
+              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-orange-200 hover:shadow-md transition-all">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <Icon name="Phone" size={20} className="text-orange-500" />
                   </div>
-                  <span className="text-xs text-gray-400 uppercase tracking-wider font-bold">Телефоны</span>
+                  <span className="text-sm text-gray-400 uppercase tracking-wider font-bold">Телефоны</span>
                 </div>
-                <div className="flex flex-col gap-1.5">
-                  <a href="tel:+79128887300" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors text-sm">+7 912 888-73-00</a>
-                  <a href="tel:+79128880042" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors text-sm">+7 912 888-00-42</a>
-                  <a href="tel:+79128884300" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors text-sm">+7 912 888-43-00</a>
+                <div className="flex flex-col gap-2">
+                  <a href="tel:+79128887300" className="text-gray-900 font-bold hover:text-orange-500 transition-colors text-lg">+7 912 888-73-00</a>
+                  <a href="tel:+79128880042" className="text-gray-900 font-bold hover:text-orange-500 transition-colors text-lg">+7 912 888-00-42</a>
+                  <a href="tel:+79128884300" className="text-gray-900 font-bold hover:text-orange-500 transition-colors text-lg">+7 912 888-43-00</a>
                 </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-orange-200 hover:shadow-md transition-all">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                    <Icon name="Mail" size={16} className="text-orange-500" />
+              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-orange-200 hover:shadow-md transition-all">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <Icon name="Mail" size={20} className="text-orange-500" />
                   </div>
-                  <span className="text-xs text-gray-400 uppercase tracking-wider font-bold">Email</span>
+                  <span className="text-sm text-gray-400 uppercase tracking-wider font-bold">Email</span>
                 </div>
-                <a href="mailto:yulmitrans@mail.ru" className="text-gray-900 font-semibold hover:text-orange-500 transition-colors text-sm break-all">yulmitrans@mail.ru</a>
+                <a href="mailto:yulmitrans@mail.ru" className="text-gray-900 font-bold hover:text-orange-500 transition-colors text-base break-all">yulmitrans@mail.ru</a>
               </div>
 
               <a href="https://t.me/yulmitrans" target="_blank" rel="noopener noreferrer"
-                 className="bg-[#2AABEE] rounded-xl p-5 hover:bg-[#1d96d4] transition-all group col-span-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-white">
+                 className="bg-[#2AABEE] rounded-xl p-6 hover:bg-[#1d96d4] transition-all group col-span-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white">
                     <TelegramIcon />
                   </div>
-                  <span className="text-xs text-white/80 uppercase tracking-wider font-bold">Telegram</span>
+                  <span className="text-sm text-white/80 uppercase tracking-wider font-bold">Telegram</span>
                 </div>
-                <div className="text-white font-bold text-sm">t.me/yulmitrans</div>
-                <div className="text-white/70 text-xs mt-1">Написать в мессенджер →</div>
+                <div className="text-white font-bold text-lg">t.me/yulmitrans</div>
+                <div className="text-white/70 text-sm mt-1">Написать в мессенджер →</div>
               </a>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-orange-200 hover:shadow-md transition-all">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                    <Icon name="Clock" size={16} className="text-orange-500" />
+              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-orange-200 hover:shadow-md transition-all">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <Icon name="Clock" size={20} className="text-orange-500" />
                   </div>
-                  <span className="text-xs text-gray-400 uppercase tracking-wider font-bold">Режим работы</span>
+                  <span className="text-sm text-gray-400 uppercase tracking-wider font-bold">Режим работы</span>
                 </div>
-                <div className="text-gray-900 font-semibold text-sm">Круглосуточно,<br />без выходных</div>
+                <div className="text-gray-900 font-bold text-lg">Круглосуточно,<br />без выходных</div>
               </div>
             </div>
 
