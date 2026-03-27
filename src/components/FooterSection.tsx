@@ -124,7 +124,10 @@ export default function FooterSection() {
               </a>
             </div>
           </div>
-          <div className="text-center text-gray-500 text-sm">© 2025 ЮЛМИ-ТРАНС — Грузоперевозки по России и Крайнему Северу</div>
+          <div className="text-center text-gray-500 text-sm space-y-1">
+            <div>© 2025 ЮЛМИ-ТРАНС — Грузоперевозки по России и Крайнему Северу</div>
+            <div className="text-gray-600 text-xs">ИП Вахрушев Юлий Михайлович · ИНН 110100379330 · ОГРНИП 317110100009462</div>
+          </div>
         </div>
       </footer>
     </>
